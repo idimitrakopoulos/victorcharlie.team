@@ -56,18 +56,19 @@
       overflow: hidden;
     }
 
-    /* Watermark Joker face */
+    /* Faded Joker watermark in the background */
     .right-column::before {
       content: "";
       position: absolute;
       top: 50%; 
       left: 50%;
-      width: 150%;
-      height: 150%;
+      width: 200%;       /* enlarge to only show part of face */
+      height: 200%;
       background: url("../images/vc-joker-face.png") no-repeat center center;
       background-size: contain;
-      transform: translate(-50%, -50%) rotate(15deg);
-      opacity: 0.08;
+      transform: translate(-50%, -50%) rotate(15deg); /* slight right tilt */
+      opacity: 0.08;     /* faded for readability */
+      filter: blur(2px) brightness(0.4) sepia(0.2) hue-rotate(-50deg); /* military green tint */
       z-index: -1;
     }
 
@@ -93,20 +94,18 @@
     /* Buttons container at bottom like form */
     .buttons-container {
       display: flex;
-      justify-content: flex-end; /* buttons aligned right */
+      justify-content: flex-end; /* buttons aligned right inside container */
       gap: 15px;
       flex-wrap: wrap;
       margin-top: auto; /* push to bottom */
       padding-top: 20px;
       border-top: 1px solid rgba(255,255,255,0.2); /* full-width line */
-      width: 100%; /* span entire column so line is full-width */
-    }
-    
-    .buttons-container a {
-      /* optional: keep buttons a fixed size */
-      min-width: 200px;
+      width: 100%; /* span entire column for line */
     }
 
+    .buttons-container a {
+      min-width: 200px;
+    }
 
     .join-link {
       display: inline-block;
@@ -155,13 +154,13 @@
 
     .footer-social-links a {
       font-size: 1.5rem;
-      color: #647a63; /* lighter green for visibility */
+      color: #647a63; /* Join Us icon color */
       transition: color 0.2s ease, transform 0.2s ease;
       text-decoration: none;
     }
 
     .footer-social-links a:hover {
-      color: #f5d742;
+      color: #f5d742; /* highlight yellow */
       transform: scale(1.2);
     }
 
