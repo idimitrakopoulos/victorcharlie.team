@@ -1,74 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="el">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Victor Charlie</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Us - Victor Charlie</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      display: flex;
-      height: 100vh;
+      background-color: #647a63;
       font-family: 'Roboto', sans-serif;
-      background-color: #647a63; /* keep background */
       color: #fff;
     }
 
-    .sidebar {
-      width: 200px;
-      background-color: #50634f; /* darker shade of logo green */
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .left-column {
+      flex: 0 0 200px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px 10px;
+      padding: 40px 20px;
+      background-color: #50634f; /* πιο σκούρο πράσινο */
     }
 
-    .sidebar img {
+    .left-column img {
       max-width: 100%;
       height: auto;
+      margin-bottom: 20px;
     }
 
-    .content {
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      color: #f5d742; /* κίτρινο για pop */
+      font-size: 1.5rem;
+      text-decoration: none;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .social-links a:hover {
+      transform: scale(1.2);
+      color: #ffffff;
+    }
+
+    .right-column {
       flex: 1;
-      padding: 30px;
+      padding: 40px 30px;
       overflow-y: auto;
     }
 
-    .content h1, .content h2, .content h3 {
-      color: #fff; /* headings in white for contrast */
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
     }
 
-    a {
-      color: #f5d742; /* yellow-ish highlight (pull from logo colors) */
-      text-decoration: none;
+    ul {
+      list-style: disc inside;
+      line-height: 1.6;
     }
-    a:hover {
-      text-decoration: underline;
+
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #50634f;
+    }
+
+    /* responsive */
+    @media(max-width: 768px){
+      .container {
+        flex-direction: column;
+      }
+      .left-column {
+        flex: none;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        padding: 20px;
+      }
+      .social-links {
+        flex-direction: row;
+        margin-top: 0;
+      }
     }
   </style>
 
-  <!-- Roboto font -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <!-- Sidebar with logo -->
-  <div class="sidebar">
-    <img src="../images/vc-joker-logo.png" alt="VC Joker Logo" />
+  <div class="container">
+    <div class="left-column">
+      <img src="images/vc-joker-logo.png" alt="VC Joker Logo">
+      <div class="social-links">
+        <a href="https://www.facebook.com/victorcharlie.team" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.youtube.com/@victorcharlie-team" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/victorcharlie.team" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@victorcharlie.team" target="_blank"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+
+    <div class="right-column">
+      <h1>Τι ψάχνουμε σε ένα νέο μέλος</h1>
+      <ul>
+        <li><strong>Σεβασμός στους κανόνες ασφαλείας:</strong> Ακολουθεί πιστά τους κανόνες ασφαλείας για προστασία του εαυτού του και των άλλων.</li>
+        <li><strong>Υπεύθυνη χρήση του εξοπλισμού:</strong> Χειρίζεται τα αεροβόλα, χειροβομβίδες και άλλο εξοπλισμό σύμφωνα με τις οδηγίες.</li>
+        <li><strong>Σωστή προστασία:</strong> Φορά πάντα τα προστατευτικά γυαλιά και κατά περίπτωση μάσκα, αρβύλες και άλλα προστατευτικά.</li>
+        <li><strong>Συνεργατική συμπεριφορά:</strong> Δείχνει ομαδικό πνεύμα, βοηθά τους συμπαίκτες και σέβεται τους αντιπάλους.</li>
+        <li><strong>Τήρηση κανόνων παιχνιδιού (Fair Play):</strong> Αναγνωρίζει hits, σέβεται τα spawn points και εφαρμόζει τους κανόνες του παιχνιδιού.</li>
+        <li><strong>Σεβασμός στο περιβάλλον και τον χώρο παιχνιδιού:</strong> Δεν πετάει σκουπίδια, δεν προκαλεί ζημιές και ακολουθεί τις οδηγίες των διοργανωτών.</li>
+        <li><strong>Υπευθυνότητα και αυτοέλεγχος:</strong> Δεν κάνει τυφλές βολές, δεν παραβαίνει τους κανόνες για προσωπικό όφελος και αντιμετωπίζει με ψυχραιμία τις καταστάσεις.</li>
+        <li><strong>Συμμόρφωση με ποινές και οδηγίες:</strong> Αποδέχεται τυχόν ποινές ή συμβουλές από τους διοργανωτές και συμμορφώνεται άμεσα.</li>
+        <li><strong>Σεβασμός στους άλλους παίκτες:</strong> Αποφεύγει επιθετική συμπεριφορά και επικοινωνεί με ευγένεια.</li>
+        <li><strong>Διασκέδαση με υπευθυνότητα:</strong> Παίζει για τη διασκέδαση και τη συμμετοχή στην ομάδα, χωρίς να θέτει σε κίνδυνο τον εαυτό του ή τους άλλους.</li>
+      </ul>
+    </div>
   </div>
 
-  <!-- Main content -->
-  <div class="content">
-    <h1>Lorem Ipsum Heading</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. 
-      Suspendisse potenti. Donec dapibus ipsum id eros dapibus, vel blandit ligula 
-      porttitor. Proin at dictum lectus. Vivamus a ipsum at erat vulputate hendrerit.
-    </p>
-    <p>
-      Read more about our <a href="#">rules</a>, check out our 
-      <a href="#">events</a>, or join our <a href="#">team</a>.
-    </p>
-  </div>
+  <footer>
+    <small>Shooting muppets since 2004</small>
+  </footer>
 </body>
 </html>
