@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Κανόνες Παιχνιδιού - Victor Charlie</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     body {
       margin: 0;
@@ -28,7 +32,7 @@
       gap: 40px;
     }
 
-    /* Left column */
+    /* Left column container (will be replaced by lefter.html outerHTML) */
     #left-column {
       flex: 0 0 200px;
       display: flex;
@@ -36,6 +40,7 @@
       align-items: center;
       justify-content: flex-start;
       background-color: #50634f;
+      min-height: 100vh;
     }
 
     #left-column a img {
@@ -53,55 +58,74 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      overflow: hidden;
+      overflow: auto;
+      gap: 20px;
     }
 
-    h1, h2, h3, h4 {
+    h1, h2, h3 {
       text-align: left;
-      margin-bottom: 20px;
+      margin: 0 0 12px 0;
+      color: #ffffff;
     }
 
     p, li {
-      line-height: 1.8;
+      line-height: 1.7;
+      margin: 0 0 12px 0;
+      color: #f0f0f0;
     }
 
     ul {
       list-style: disc inside;
-      margin-bottom: 30px;
+      margin: 0 0 20px 0;
     }
 
-    ul li {
-      margin-bottom: 15px;
-    }
-
-    /* Table of Contents */
     .toc {
-      background: rgba(0,0,0,0.2);
-      padding: 15px;
+      background: rgba(0,0,0,0.18);
+      padding: 12px 16px;
       border-radius: 8px;
-      margin-bottom: 30px;
+      margin-bottom: 10px;
+      max-width: 900px;
     }
 
-    .toc ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .toc ul li {
+    .toc h2 {
+      margin-top: 0;
       margin-bottom: 10px;
     }
 
+    .toc ul { padding-left: 0; margin: 0; }
+    .toc li { margin: 6px 0; }
     .toc a {
       color: #f5d742;
       text-decoration: none;
-      transition: color 0.2s ease;
+    }
+    .toc a:hover { color: #fff; text-decoration: underline; }
+
+    footer {
+      background-color: #50634f;
+      display: flex;
+      justify-content: center;
+      padding: 15px 10px;
+      margin-top: 20px;
     }
 
-    .toc a:hover {
-      color: #ffffff;
+    .footer-social-links {
+      display: flex;
+      gap: 20px;
     }
 
-    @media(max-width: 768px){
+    .footer-social-links a {
+      font-size: 1.2rem;
+      color: #647a63;
+      transition: color 0.2s ease, transform 0.2s ease;
+      text-decoration: none;
+    }
+
+    .footer-social-links a:hover {
+      color: #f5d742;
+      transform: scale(1.15);
+    }
+
+    @media(max-width: 860px){
       .main-content {
         flex-direction: column;
       }
@@ -109,33 +133,56 @@
         flex-direction: row;
         justify-content: center;
         padding: 10px 0;
+        min-height: auto;
+      }
+      .right-column {
+        padding: 20px;
       }
     }
   </style>
 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <!-- Google tag (gtag.js) - your ID as in original -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-36WGY48938"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-36WGY48938');
+  </script>
 </head>
 <body>
   <div class="wrapper">
     <div class="main-content">
-      <!-- Left column loaded via JS -->
+      <!-- Left column loaded via JS (original path preserved) -->
       <div id="left-column"></div>
 
       <div class="right-column">
-        <h1>Κανόνες & Briefing</h1>
+        <h1>Briefing & Κανόνες</h1>
 
-        <!-- Table of Contents -->
-        <div class="toc">
+        <!-- Table of Contents (anchors for every h2 and h3) -->
+        <nav class="toc" aria-label="Περιεχόμενα">
           <h2>Περιεχόμενα</h2>
           <ul>
             <li><a href="#eisagogi">Εισαγωγή</a></li>
+
             <li><a href="#kanones-asfaleias">Κανόνες Ασφαλείας</a>
               <ul>
                 <li><a href="#xoroi-symperifora">Χώροι και συμπεριφορά</a></li>
                 <li><a href="#prostateytikos-exoplismos">Προστατευτικός Εξοπλισμός</a></li>
+                <li><a href="#gyalia">Γυαλιά</a></li>
+                <li><a href="#prostasia-prosopou">Προστασία προσώπου</a></li>
+                <li><a href="#ypodisi">Υπόδηση</a></li>
+                <li><a href="#prosthetika">Προστατευτικά</a></li>
                 <li><a href="#epitrepomenos-exoplismos">Επιτρεπόμενος Εξοπλισμός</a></li>
+                <li><a href="#oplismos">Οπλισμός</a></li>
+                <li><a href="#oria-aerovolon">Όρια Αεροβόλων</a></li>
+                <li><a href="#xeirovomvides-ektoxeustires">Χειροβομβίδες/Οπλοβομβίδες/Εκτοξευτήρες</a></li>
+                <li><a href="#metafora-exoplismou">Μεταφορά Εξοπλισμού</a></li>
+                <li><a href="#metrisi">Μετρήσεις</a></li>
+                <li><a href="#tyflos">Τυφλός</a></li>
               </ul>
             </li>
+
             <li><a href="#kanones-paixnidiou">Κανόνες Παιχνιδιού</a>
               <ul>
                 <li><a href="#geniki-symperifora">Γενική Συμπεριφορά</a></li>
@@ -154,91 +201,144 @@
                 <li><a href="#xeirovomvides">Χειροβομβίδες/Οπλοβομβίδες</a></li>
               </ul>
             </li>
+
             <li><a href="#poines">Ποινές για Παραβάσεις</a></li>
             <li><a href="#sapheia">Κανονισμοί Σαφήνειας</a></li>
           </ul>
-        </div>
+        </nav>
 
+        <!-- Full content (as you provided) -->
         <h2 id="eisagogi">Εισαγωγή</h2>
-        <p>Καλωσορίσατε σε ένα ακόμα παιχνίδι των Victor Charlie!... (όλο το κείμενο σου μπαίνει εδώ)</p>
+        <p>Καλωσορίσατε σε ένα ακόμα παιχνίδι των Victor Charlie! Είμαστε εδώ για να διασκεδάσουμε, να παίξουμε με ασφάλεια και να δείξουμε ομαδικό πνεύμα. Σημαντικό είναι όλοι να ακολουθήσουμε τους κανονισμούς για να εξασφαλίσουμε ότι όλοι θα περάσουμε καλά χωρίς τραυματισμούς ή άλλα προβλήματα.</p>
+        <p>Πριν ξεκινήσουμε, θα επεξηγήσουμε τους κανονισμούς ασφαλείας και τους κανόνες του παιχνιδιού. Είναι σημαντικό να τους γνωρίζετε και να τους εφαρμόζετε κατά τη διάρκεια του παιχνιδιού. Κατά τη διάρκεια αυτού του briefing μπορείτε να συνεχίσετε την προετοιμασία σας για το παιχνίδι αλλά θα παρακαλέσουμε να το κάνετε με ησυχία για να μπορούν όλοι να ακούσουν.</p>
 
         <h2 id="kanones-asfaleias">Κανόνες Ασφαλείας</h2>
+        <p>Αν ακολουθήσετε μόνο μια κατηγορία κανόνων από αυτούς που θα πούμε σήμερα, τότε φροντίστε αυτοί να είναι οι κανόνες ασφαλείας. Πρέπει να τους ακολουθούμε για δύο λόγους: προστασία της δικής μας σωματικής ακεραιότητας και των συμπαικτών μας και προστασία του αθλήματος.</p>
+
         <h3 id="xoroi-symperifora">Χώροι και συμπεριφορά</h3>
-        <p>...</p>
+        <ul>
+          <li><strong>Μην ρίχνετε μπίλιες</strong> εντός του χώρου προετοιμασίας των παικτών. Αν χρειάζεστε να δοκιμάσετε το όπλο σας παρακαλούμε να μεταβείτε στο σημείο που θα σας υποδείξει η διοργάνωση.</li>
+          <li><strong>Ποτέ μην βγάζετε τα προστατευτικά γυαλιά σας</strong> ακόμη κι όταν βρίσκεστε εκτός παιχνιδιού. Υπάρχει πάντα κίνδυνος να χάσετε το μάτι σας.</li>
+          <li><strong>Σεβασμός στο περιβάλλον</strong>: Μην πετάτε σκουπίδια στον χώρο διεξαγωγής του παιχνιδιού. Φροντίζουμε να παίρνουμε τα σκουπίδια μαζί μας.</li>
+          <li><strong>Αποφύγετε πηγές φωτιάς</strong> όπως αποτσίγαρα, τα οποία μπορούν να προκαλέσουν πυρκαγιά.</li>
+        </ul>
 
         <h3 id="prostateytikos-exoplismos">Προστατευτικός Εξοπλισμός</h3>
-        <h4 id="gyalia">Γυαλιά</h4>
-        <p>...</p>
+
+        <h3 id="gyalia">Γυαλιά</h3>
+        <p>Υποχρεωτικά γυαλιά προστασίας για όλους τους παίκτες. Τα γυαλιά πρέπει να είναι πιστοποιημένα για χρήση σε airsoft και συμβατά με το πρότυπο ANSI Z87.1+.</p>
+        <p>Δεν επιτρέπονται ακατάλληλα γυαλιά και γυαλιά εργασίας που δεν έχουν αυτό το πρότυπο.</p>
+
+        <h3 id="prostasia-prosopou">Προστασία προσώπου</h3>
+        <p>Ενθαρρύνουμε τη χρήση μάσκας προσώπου, ιδίως για την προστασία της μύτης, του στόματος και των δοντιών από πιθανές τραυματιστικές βολές.</p>
+
+        <h3 id="ypodisi">Υπόδηση</h3>
+        <p>Η σωστή υπόδηση είναι απαραίτητη. Πρέπει να φοράτε αρβύλα ή ορειβατικό παπούτσι για την αποφυγή ατυχημάτων και διαστρεμμάτων.</p>
+
+        <h3 id="prosthetika">Προστατευτικά</h3>
+        <p>Χρησιμοποιήστε επιπλέον προστατευτικά (επιαγκωνίδες, επιγονατίδες) για την προστασία από πτώσεις, ειδικά σε περιοχές με δύσβατο ή επικίνδυνο έδαφος.</p>
+        <p>Οι διοργανωτές θα πραγματοποιούν σχετικούς ελέγχους για όλα τα παραπάνω. Παρακαλούμε να κάνετε έναν έλεγχο τώρα σχετικά με τον εξοπλισμό σας αν έχετε αμφιβολία ότι πληρούν τις προϋποθέσεις.</p>
+
+        <h3 id="epitrepomenos-exoplismos">Επιτρεπόμενος Εξοπλισμός</h3>
+
+        <h3 id="oplismos">Οπλισμός</h3>
+        <p><em>Όλος ο εξοπλισμός πρέπει να είναι συμβατός με τις απαιτήσεις του παιχνιδιού.</em></p>
+
+        <h3 id="oria-aerovolon">Όρια Αεροβόλων</h3>
+        <p><em>Τα αεροβόλα πρέπει να πληρούν τις καθορισμένες παραμέτρους ισχύος και ταχύτητας, ανάλογα με την κατηγορία του παιχνιδιού.</em></p>
+
+        <h3 id="xeirovomvides-ektoxeustires">Χειροβομβίδες/Οπλοβομβίδες/Εκτοξευτήρες</h3>
+        <p><em>Οι εκτοξευτήρες και οι χειροβομβίδες πρέπει να είναι εγκεκριμένοι από τους διοργανωτές και να χρησιμοποιούνται σύμφωνα με τις οδηγίες τους.</em></p>
+
+        <h3 id="metafora-exoplismou">Μεταφορά Εξοπλισμού</h3>
+        <ul>
+          <li>Μην μεταφέρετε ακάλυπτο εξοπλισμό από και προς τον χώρο διεξαγωγής του παιχνιδιού.</li>
+        </ul>
+
+        <h3 id="metrisi">Μετρήσεις</h3>
+        <p><em>Πριν την εκκίνηση του παιχνιδιού, όλοι οι παίκτες πρέπει να υποβληθούν σε έλεγχο των αεροβόλων τους.</em></p>
+
+        <h3 id="tyflos">Τυφλός</h3>
+        <p><em>Απαγορεύεται η χρήση αεροβόλων ή άλλου εξοπλισμού από παίκτες που δεν έχουν τη δυνατότητα να δουν τον στόχο τους.</em></p>
 
         <h2 id="kanones-paixnidiou">Κανόνες Παιχνιδιού</h2>
+
         <h3 id="geniki-symperifora">Γενική Συμπεριφορά</h3>
-        <p>...</p>
+        <p><em>Η συμπεριφορά όλων των παικτών πρέπει να είναι ευγενική και συνεργατική. Οποιαδήποτε επιθετική συμπεριφορά θα έχει συνέπειες.</em></p>
 
         <h3 id="fair-play">Fair Play</h3>
-        <p>...</p>
+        <p><em>Όλοι οι παίκτες είναι υποχρεωμένοι να τηρούν τον κανόνα του fair play, αναγνωρίζοντας τους χτυπημένους παίκτες και τηρώντας τις διαδικασίες του παιχνιδιού.</em></p>
 
         <h3 id="spawn-respawn">Spawn/Respawn Areas</h3>
-        <p>...</p>
+        <p>Τα σημεία αναγέννησης (Spawn) είναι ειδικά καθορισμένα και προστατευμένα. Δεν επιτρέπεται η επίθεση σε αυτά τα σημεία.</p>
+        <p>Δεν επιτρέπεται το spawn camping. Δηλαδή η αναμονή γύρω από τα σημεία για να μπορεί να γίνει ανάπτυξη των αντιπάλων κατά την επανείσοδό τους στο παιχνίδι.</p>
 
         <h3 id="hit">Hit</h3>
-        <p>...</p>
+        <p>Όταν κάποιος παίκτης δέχεται βολή σε οποιοδήποτε σημείο του εξοπλισμού του, οφείλει να φωνάξει "hit" και να σηκώσει το χέρι του, ώστε να δηλώσει ότι βγήκε εκτός παιχνιδιού.</p>
 
         <h3 id="exostrakismos">Εξοστρακισμός</h3>
-        <p>...</p>
+        <p>Οι βολές που έχουν εξοστρακιστεί από κάποιο αντικείμενο και πέφτουν πάνω σε έναν παίκτη δεν μετράνε ως hit. Ο παίκτης συνεχίζει κανονικά το παιχνίδι του.</p>
 
         <h3 id="tyfli-voli">Τυφλή Βολή</h3>
-        <p>...</p>
+        <p>Απαγορεύεται η τυφλή βολή (όταν ρίχνουμε χωρίς να βλέπουμε τον στόχο). Είναι επικίνδυνο γιατί ο στόχος μας μπορεί να έχει χάσει τα γυαλιά του.</p>
 
         <h3 id="voli-trypes">Βολή από Τρύπες</h3>
-        <p>...</p>
+        <p>Δεν επιτρέπεται βολή μέσω τρύπας από την οποία δεν μπορεί να περάσει ένας άνθρωπος έστω σκυφτός.</p>
 
         <h3 id="voli-aerovolo">Βολή στο Αεροβόλο</h3>
-        <p>...</p>
+        <p>Όταν χτυπηθεί το αεροβόλο κάποιου παίκτη, τότε ο παίκτης θεωρείται ότι έχει βγει εκτός παιχνιδιού.</p>
 
         <h3 id="voli-ypsometriki">Βολή με Υψομετρική Διαφορά</h3>
-        <p>...</p>
+        <p>Βολές από υπερυψωμένα σημεία όπως κτήρια, μπαλκόνια, δέντρα δεν επιτρέπονται λόγω της μεγάλης γωνίας βολής που μπορεί να καταλήξει εσωτερικά των ειδικών γυαλιών του αντιπάλου. Το μόνο σημείο από το οποίο επιτρέπεται βολή με υψομετρική διαφορά είναι οι σκάλες, όπου εκεί αναμένεται ο αντίπαλος να κοιτάζει προς τα πάνω ή προς τα κάτω καθώς κινείται στη σκάλα.</p>
 
         <h3 id="nekros">Νεκρός</h3>
-        <p>...</p>
+        <ul>
+          <li>Δεν ακολουθούμε νεκρούς για κάλυψη.</li>
+          <li>Δεν μιλάμε σε κανέναν κατά την έξοδο μας από το παιχνίδι.</li>
+          <li>Για να δηλώσουμε την κατάσταση μας χρησιμοποιούμε dead rag (δηλαδή ένα κόκκινο πανί) ή κρατάμε το χέρι ή το αεροβόλο μας ψηλά στον αέρα.</li>
+          <li>Επιτρέπεται να ειδοποιήσουμε τους συμπαίκτες μας ότι είμαστε εκτός παιχνιδιού για να μην μας ρίξουν σε περίπτωση που εμφανιστούμε ξαφνικά μπροστά τους.</li>
+        </ul>
 
         <h3 id="silent-kill">Silent Kill</h3>
-        <p>...</p>
+        <p>Το "Silent Kill" γίνεται με ελαφρύ άγγιγμα πάνω στον αντίπαλο και είναι ένας τρόπος για να βγάλεις κάποιον εκτός παιχνιδιού χωρίς να ρίξεις.</p>
+        <p>Αν υποστείτε silent kill πρέπει να μην φωνάξετε Hit αλλά να περπατήσετε 5 μέτρα προς την κατεύθυνση του Spawn και μακριά από τον παίκτη που σας έβγαλε και να φωνάξετε μετά το Hit.</p>
 
         <h3 id="bam">Μπάμ</h3>
-        <p>...</p>
+        <p>Ο κανόνας του μπάμ επιτρέπει στους παίκτες να βγάζουν άλλους παίκτες εκτός παιχνιδιού με επαφή, αν και οι λεπτομέρειες πρέπει να γίνουν κατανοητές εκ των προτέρων.</p>
 
         <h3 id="parlay">Παρλέ (Parlay)</h3>
-        <p>...</p>
+        <p><em>Ο κανόνας του παρλέ επιτρέπει στους παίκτες να ζητούν διάλειμμα για διευθέτηση οποιασδήποτε διαφωνίας ή ακατάλληλης συμπεριφοράς. Πρέπει να γίνεται σεβαστή από όλους τους παίκτες.</em></p>
 
         <h3 id="xeirovomvides">Χειροβομβίδες/Οπλοβομβίδες</h3>
-        <p>...</p>
+        <p>Οι χειροβομβίδες έχουν ακτίνα 5 μέτρων. Όλοι οι παίκτες εντός αυτής της ακτίνας θεωρούνται χτυπημένοι, εκτός αν μεσολαβεί μεταξύ του σημείου που έσκασε η χειροβομβίδα και της θέσης τους τοίχος τσιμέντου από το πάτωμα ως το ταβάνι.</p>
+        <p>Επιτρέπονται χειροβομβίδες κατασκευασμένες μόνο για airsoft, όχι ιδιοκατασκευές, όχι πυροτεχνικές.</p>
+        <p>Δεν επιτρέπονται οι χειροβομβίδες καψουλιού και καπνογόνα, καθώς μπορεί να προκαλέσουν πυρκαγιά.</p>
+        <p>Επιτρέπονται μόνο χειροβομβίδες ελατηρίου και αερίου.</p>
 
         <h2 id="poines">Ποινές για Παραβάσεις</h2>
-        <p>...</p>
+        <p><em>Οι παίκτες που παραβιάζουν τους κανόνες θα υπόκεινται σε ποινές που μπορούν να περιλαμβάνουν αποβολή από το παιχνίδι ή άλλες συνέπειες σύμφωνα με την σοβαρότητα της παράβασης.</em></p>
 
         <h2 id="sapheia">Κανονισμοί Σαφήνειας</h2>
-        <p>...</p>
+        <p><em>Σε περίπτωση που υπάρχουν αμφιβολίες ή διευκρινίσεις σχετικά με οποιονδήποτε κανόνα, παρακαλούμε να επικοινωνείτε με τους διοργανωτές.</em></p>
+        <p>Αυτοί οι κανόνες είναι σημαντικοί για να διασφαλίσουμε ότι το παιχνίδι παραμένει ασφαλές και διασκεδαστικό για όλους. Προσέξτε ο ένας τον άλλο και απολαύστε το παιχνίδι!</p>
+
       </div>
     </div>
 
-    <!-- Footer loaded via JS -->
-    <div id="footer"></div>
+    <!-- Footer loaded via JS (original path preserved) -->
+    <div id="footer-container"></div>
   </div>
 
   <script>
-    // Load the left column content
-    fetch('left.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('left-column').innerHTML = data;
-      });
+    // Load left column (exact original path and behavior)
+    fetch("../web/components/lefter.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("left-column").outerHTML = data);
 
-    // Load footer content
-    fetch('footer.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('footer').innerHTML = data;
-      });
+    // Load footer (exact original path and behavior)
+    fetch("../web/components/footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer-container").innerHTML = data);
   </script>
 </body>
 </html>
