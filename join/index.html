@@ -18,13 +18,15 @@
       min-height: 100vh;
     }
 
+    /* Left column with logo and social icons */
     .left-column {
       flex: 0 0 200px;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       align-items: center;
       padding: 40px 20px;
-      background-color: #50634f; /* πιο σκούρο πράσινο */
+      background-color: #50634f; /* darker green */
     }
 
     .left-column img {
@@ -33,25 +35,25 @@
       margin-bottom: 20px;
     }
 
+    /* Social icons at the bottom of the left column */
     .social-links {
       display: flex;
-      flex-direction: column;
       gap: 15px;
-      margin-top: 20px;
     }
 
     .social-links a {
-      color: #f5d742; /* κίτρινο για pop */
-      font-size: 1.5rem;
+      color: #f5d742;
+      font-size: 1.2rem;
       text-decoration: none;
       transition: transform 0.2s ease, color 0.2s ease;
     }
 
     .social-links a:hover {
-      transform: scale(1.2);
       color: #ffffff;
+      transform: scale(1.2);
     }
 
+    /* Right column with text */
     .right-column {
       flex: 1;
       padding: 40px 30px;
@@ -59,7 +61,7 @@
     }
 
     h1 {
-      text-align: center;
+      text-align: left;
       margin-bottom: 30px;
     }
 
@@ -68,38 +70,57 @@
       line-height: 1.6;
     }
 
+    /* Join link below the list */
+    .join-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background-color: #f5d742;
+      color: #50634f;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.2s ease;
+    }
+
+    .join-link:hover {
+      background-color: #ffffff;
+      color: #50634f;
+    }
+
     footer {
       text-align: center;
       padding: 10px;
       background-color: #50634f;
     }
 
-    /* responsive */
+    /* Responsive for mobile */
     @media(max-width: 768px){
       .container {
         flex-direction: column;
       }
       .left-column {
-        flex: none;
-        width: 100%;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
         padding: 20px;
       }
       .social-links {
         flex-direction: row;
-        margin-top: 0;
       }
     }
   </style>
 
+  <!-- Roboto font -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <!-- Font Awesome for social icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <div class="container">
     <div class="left-column">
-      <img src="images/vc-joker-logo.png" alt="VC Joker Logo">
+      <!-- Team logo -->
+      <img src="../images/vc-joker-logo.png" alt="VC Joker Logo">
+      <!-- Social media icons -->
       <div class="social-links">
         <a href="https://www.facebook.com/victorcharlie.team" target="_blank"><i class="fab fa-facebook"></i></a>
         <a href="https://www.youtube.com/@victorcharlie-team" target="_blank"><i class="fab fa-youtube"></i></a>
@@ -109,7 +130,9 @@
     </div>
 
     <div class="right-column">
+      <!-- Title -->
       <h1>Τι ψάχνουμε σε ένα νέο μέλος</h1>
+      <!-- List of team values / desired traits -->
       <ul>
         <li><strong>Σεβασμός στους κανόνες ασφαλείας:</strong> Ακολουθεί πιστά τους κανόνες ασφαλείας για προστασία του εαυτού του και των άλλων.</li>
         <li><strong>Υπεύθυνη χρήση του εξοπλισμού:</strong> Χειρίζεται τα αεροβόλα, χειροβομβίδες και άλλο εξοπλισμό σύμφωνα με τις οδηγίες.</li>
@@ -122,9 +145,13 @@
         <li><strong>Σεβασμός στους άλλους παίκτες:</strong> Αποφεύγει επιθετική συμπεριφορά και επικοινωνεί με ευγένεια.</li>
         <li><strong>Διασκέδαση με υπευθυνότητα:</strong> Παίζει για τη διασκέδαση και τη συμμετοχή στην ομάδα, χωρίς να θέτει σε κίνδυνο τον εαυτό του ή τους άλλους.</li>
       </ul>
+
+      <!-- Join link -->
+      <a href="#" class="join-link">Θέλω να γίνω μέλος των Victor Charlie</a>
     </div>
   </div>
 
+  <!-- Footer -->
   <footer>
     <small>Shooting muppets since 2004</small>
   </footer>
