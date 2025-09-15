@@ -204,12 +204,12 @@
 
   <script>
     // Load left column
-    fetch("lefter.html")
+    fetch("../web/components/lefter.html")
       .then(res => res.text())
       .then(data => document.getElementById("left-column").outerHTML = data);
 
     // Load footer
-    fetch("footer.html")
+    fetch("../web/components/footer.html")
       .then(res => res.text())
       .then(data => document.getElementById("footer-container").innerHTML = data);
   </script>
