@@ -18,8 +18,8 @@
 
     .wrapper {
       display: flex;
-      flex: 1;
       flex-direction: column;
+      min-height: 100vh;
     }
 
     .main-content {
@@ -28,7 +28,7 @@
       gap: 40px;
     }
 
-    /* Left column placeholder */
+    /* Left column */
     .left-column {
       flex: 0 0 200px;
       display: flex;
@@ -38,6 +38,13 @@
       background-color: #50634f;
     }
 
+    .left-column a img {
+      max-width: 150px;
+      height: auto;
+      margin: 20px 0;
+    }
+
+    /* Right column */
     .right-column {
       flex: 1;
       padding: 40px 30px;
@@ -116,6 +123,7 @@
       color: #f5d742;
     }
 
+    /* Footer */
     footer {
       background-color: #50634f;
       display: flex;
@@ -163,8 +171,8 @@
 <body>
   <div class="wrapper">
     <div class="main-content">
-      <!-- Load left column via JS -->
-      <div id="left-column-container"></div>
+      <!-- Left column loaded via JS -->
+      <div id="left-column"></div>
 
       <div class="right-column">
         <div>
@@ -190,7 +198,7 @@
       </div>
     </div>
 
-    <!-- Load footer via JS -->
+    <!-- Footer loaded via JS -->
     <div id="footer-container"></div>
   </div>
 
@@ -198,7 +206,7 @@
     // Load left column
     fetch("lefter.html")
       .then(res => res.text())
-      .then(data => document.getElementById("left-column-container").innerHTML = data);
+      .then(data => document.getElementById("left-column").outerHTML = data);
 
     // Load footer
     fetch("footer.html")
