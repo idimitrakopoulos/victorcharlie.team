@@ -16,6 +16,12 @@
       min-height: 100vh;
     }
 
+    .wrapper {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+    }
+
     .main-content {
       flex: 1;
       display: flex;
@@ -43,6 +49,26 @@
       flex: 1;
       padding: 40px 30px;
       overflow-y: auto;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* push buttons to bottom */
+    }
+
+    /* Watermark Joker face */
+    .right-column::before {
+      content: "";
+      position: absolute;
+      top: 0; 
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("../images/vc-joker-face.png") no-repeat center center;
+      background-size: 120%;
+      transform: rotate(15deg);
+      opacity: 0.08;
+      z-index: -1;
     }
 
     h1 {
@@ -64,13 +90,15 @@
       font-weight: bold;
     }
 
-    /* Buttons under the values, aligned left */
+    /* Buttons container at bottom like form */
     .buttons-container {
       display: flex;
       justify-content: flex-start;
       gap: 15px;
       flex-wrap: wrap;
-      margin-bottom: 20px;
+      margin-top: auto; /* push to bottom */
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.2);
     }
 
     .join-link {
@@ -130,13 +158,6 @@
       transform: scale(1.2);
     }
 
-    /* Ensure left column stretches to footer */
-    .wrapper {
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-    }
-
     @media(max-width: 768px){
       .main-content {
         flex-direction: column;
@@ -150,7 +171,6 @@
         justify-content: center;
       }
     }
-
   </style>
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -160,29 +180,27 @@
   <div class="wrapper">
     <div class="main-content">
       <div class="left-column">
-        <!-- Team logo -->
         <img src="../images/vc-joker-logo.png" alt="VC Joker Logo">
       </div>
 
       <div class="right-column">
-        <!-- Main title -->
-        <h1>Αξίες της ομάδας μας</h1>
+        <div>
+          <h1>Αξίες της ομάδας μας</h1>
+          <ul>
+            <li><strong>Σεβασμός στους κανόνες ασφαλείας:</strong> Ακολουθεί πιστά τους κανόνες ασφαλείας για προστασία του εαυτού του και των άλλων.</li>
+            <li><strong>Υπεύθυνη χρήση του εξοπλισμού:</strong> Χειρίζεται τα αεροβόλα, χειροβομβίδες και άλλο εξοπλισμό σύμφωνα με τις οδηγίες.</li>
+            <li><strong>Σωστή προστασία:</strong> Φορά πάντα τα προστατευτικά γυαλιά και κατά περίπτωση μάσκα, αρβύλες και άλλα προστατευτικά.</li>
+            <li><strong>Συνεργατική συμπεριφορά:</strong> Δείχνει ομαδικό πνεύμα, βοηθά τους συμπαίκτες και σέβεται τους αντιπάλους.</li>
+            <li><strong>Τήρηση κανόνων παιχνιδιού (Fair Play):</strong> Αναγνωρίζει hits, σέβεται τα spawn points και εφαρμόζει τους κανόνες του παιχνιδιού.</li>
+            <li><strong>Σεβασμός στο περιβάλλον και τον χώρο παιχνιδιού:</strong> Δεν πετάει σκουπίδια, δεν προκαλεί ζημιές και ακολουθεί τις οδηγίες των διοργανωτών.</li>
+            <li><strong>Υπευθυνότητα και αυτοέλεγχος:</strong> Δεν κάνει τυφλές βολές, δεν παραβαίνει τους κανόνες για προσωπικό όφελος και αντιμετωπίζει με ψυχραιμία τις καταστάσεις.</li>
+            <li><strong>Συμμόρφωση με ποινές και οδηγίες:</strong> Αποδέχεται τυχόν ποινές ή συμβουλές από τους διοργανωτές και συμμορφώνεται άμεσα.</li>
+            <li><strong>Σεβασμός στους άλλους παίκτες:</strong> Αποφεύγει επιθετική συμπεριφορά και επικοινωνεί με ευγένεια.</li>
+            <li><strong>Διασκέδαση με υπευθυνότητα:</strong> Παίζει για τη διασκέδαση και τη συμμετοχή στην ομάδα, χωρίς να θέτει σε κίνδυνο τον εαυτό του ή τους άλλους.</li>
+          </ul>
+        </div>
 
-        <!-- List of values -->
-        <ul>
-          <li><strong>Σεβασμός στους κανόνες ασφαλείας:</strong> Ακολουθεί πιστά τους κανόνες ασφαλείας για προστασία του εαυτού του και των άλλων.</li>
-          <li><strong>Υπεύθυνη χρήση του εξοπλισμού:</strong> Χειρίζεται τα αεροβόλα, χειροβομβίδες και άλλο εξοπλισμό σύμφωνα με τις οδηγίες.</li>
-          <li><strong>Σωστή προστασία:</strong> Φορά πάντα τα προστατευτικά γυαλιά και κατά περίπτωση μάσκα, αρβύλες και άλλα προστατευτικά.</li>
-          <li><strong>Συνεργατική συμπεριφορά:</strong> Δείχνει ομαδικό πνεύμα, βοηθά τους συμπαίκτες και σέβεται τους αντιπάλους.</li>
-          <li><strong>Τήρηση κανόνων παιχνιδιού (Fair Play):</strong> Αναγνωρίζει hits, σέβεται τα spawn points και εφαρμόζει τους κανόνες του παιχνιδιού.</li>
-          <li><strong>Σεβασμός στο περιβάλλον και τον χώρο παιχνιδιού:</strong> Δεν πετάει σκουπίδια, δεν προκαλεί ζημιές και ακολουθεί τις οδηγίες των διοργανωτών.</li>
-          <li><strong>Υπευθυνότητα και αυτοέλεγχος:</strong> Δεν κάνει τυφλές βολές, δεν παραβαίνει τους κανόνες για προσωπικό όφελος και αντιμετωπίζει με ψυχραιμία τις καταστάσεις.</li>
-          <li><strong>Συμμόρφωση με ποινές και οδηγίες:</strong> Αποδέχεται τυχόν ποινές ή συμβουλές από τους διοργανωτές και συμμορφώνεται άμεσα.</li>
-          <li><strong>Σεβασμός στους άλλους παίκτες:</strong> Αποφεύγει επιθετική συμπεριφορά και επικοινωνεί με ευγένεια.</li>
-          <li><strong>Διασκέδαση με υπευθυνότητα:</strong> Παίζει για τη διασκέδαση και τη συμμετοχή στην ομάδα, χωρίς να θέτει σε κίνδυνο τον εαυτό του ή τους άλλους.</li>
-        </ul>
-
-        <!-- Buttons aligned left -->
+        <!-- Buttons at bottom like a form -->
         <div class="buttons-container">
           <a href="#" class="disagree-link">Δεν συμφωνώ με τις αξίες της ομάδας</a>
           <a href="#" class="join-link">Θέλω να γίνω μέλος των Victor Charlie</a>
