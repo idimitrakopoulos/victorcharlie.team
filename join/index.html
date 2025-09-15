@@ -38,7 +38,7 @@
       background-color: #50634f;
     }
 
-    .left-column img {
+    .left-column a img {
       max-width: 100%;
       height: auto;
       margin: 20px 0;
@@ -53,7 +53,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      overflow: hidden; /* hide scrollbars */
+      overflow: hidden;
     }
 
     /* Watermark Joker face */
@@ -99,6 +99,7 @@
       margin-top: auto; /* push to bottom */
       padding-top: 20px;
       border-top: 1px solid rgba(255,255,255,0.2);
+      margin-left: 75%; /* shift buttons ~75% to the right */
     }
 
     .join-link {
@@ -168,6 +169,7 @@
         padding: 10px 0;
       }
       .buttons-container {
+        margin-left: 0;
         justify-content: center;
       }
     }
@@ -180,7 +182,7 @@
   <div class="wrapper">
     <div class="main-content">
       <div class="left-column">
-        <img src="../images/vc-joker-logo.png" alt="VC Joker Logo">
+        <a href="https://victorcharlie.team"><img src="../images/vc-joker-logo.png" alt="VC Joker Logo"></a>
       </div>
 
       <div class="right-column">
@@ -202,7 +204,7 @@
 
         <!-- Buttons at bottom like a form -->
         <div class="buttons-container">
-          <a href="#" class="disagree-link">Δεν συμφωνώ με τις αξίες της ομάδας</a>
+          <a href="https://example.com/flipoff" class="disagree-link">Δεν συμφωνώ με τις αξίες της ομάδας</a>
           <a href="#" class="join-link">Θέλω να γίνω μέλος των Victor Charlie</a>
         </div>
       </div>
