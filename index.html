@@ -32,13 +32,14 @@
 
     .social-links a {
       font-size: 2rem;
-      color: #50634f; /* Option A: logo-friendly green */
+      color: #50634f; /* default logo-green */
       text-decoration: none;
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, color 0.2s ease;
     }
 
     .social-links a:hover {
       transform: scale(1.2);
+      color: #f5d742; /* highlight yellow on hover */
     }
 
     footer {
