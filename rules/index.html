@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Κανόνες Παιχνιδιού - Victor Charlie</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #647a63;
+      font-family: 'Roboto', sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      gap: 40px;
+    }
+
+    /* Left column */
+    #left-column {
+      flex: 0 0 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      background-color: #50634f;
+    }
+
+    #left-column a img {
+      max-width: 150px;
+      height: auto;
+      margin: 20px 0;
+    }
+
+    /* Right column */
+    .right-column {
+      flex: 1;
+      padding: 40px 30px;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      overflow: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    p, li {
+      line-height: 1.8;
+    }
+
+    ul {
+      list-style: disc inside;
+      margin-bottom: 30px;
+    }
+
+    ul li {
+      margin-bottom: 15px;
+    }
+
+    /* Table of Contents */
+    .toc {
+      background: rgba(0,0,0,0.2);
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+
+    .toc ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .toc ul li {
+      margin-bottom: 10px;
+    }
+
+    .toc a {
+      color: #f5d742;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .toc a:hover {
+      color: #ffffff;
+    }
+
+    @media(max-width: 768px){
+      .main-content {
+        flex-direction: column;
+      }
+      #left-column {
+        flex-direction: row;
+        justify-content: center;
+        padding: 10px 0;
+      }
+    }
+  </style>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="main-content">
+      <!-- Left column loaded via JS -->
+      <div id="left-column"></div>
+
+      <div class="right-column">
+        <h1>Κανόνες & Briefing</h1>
+
+        <!-- Table of Contents -->
+        <div class="toc">
+          <h2>Περιεχόμενα</h2>
+          <ul>
+            <li><a href="#eisagogi">Εισαγωγή</a></li>
+            <li><a href="#kanones-asfaleias">Κανόνες Ασφαλείας</a>
+              <ul>
+                <li><a href="#xoroi-symperifora">Χώροι και συμπεριφορά</a></li>
+                <li><a href="#prostateytikos-exoplismos">Προστατευτικός Εξοπλισμός</a></li>
+                <li><a href="#epitrepomenos-exoplismos">Επιτρεπόμενος Εξοπλισμός</a></li>
+              </ul>
+            </li>
+            <li><a href="#kanones-paixnidiou">Κανόνες Παιχνιδιού</a>
+              <ul>
+                <li><a href="#geniki-symperifora">Γενική Συμπεριφορά</a></li>
+                <li><a href="#fair-play">Fair Play</a></li>
+                <li><a href="#spawn-respawn">Spawn/Respawn Areas</a></li>
+                <li><a href="#hit">Hit</a></li>
+                <li><a href="#exostrakismos">Εξοστρακισμός</a></li>
+                <li><a href="#tyfli-voli">Τυφλή Βολή</a></li>
+                <li><a href="#voli-trypes">Βολή από Τρύπες</a></li>
+                <li><a href="#voli-aerovolo">Βολή στο Αεροβόλο</a></li>
+                <li><a href="#voli-ypsometriki">Βολή με Υψομετρική Διαφορά</a></li>
+                <li><a href="#nekros">Νεκρός</a></li>
+                <li><a href="#silent-kill">Silent Kill</a></li>
+                <li><a href="#bam">Μπάμ</a></li>
+                <li><a href="#parlay">Παρλέ (Parlay)</a></li>
+                <li><a href="#xeirovomvides">Χειροβομβίδες/Οπλοβομβίδες</a></li>
+              </ul>
+            </li>
+            <li><a href="#poines">Ποινές για Παραβάσεις</a></li>
+            <li><a href="#sapheia">Κανονισμοί Σαφήνειας</a></li>
+          </ul>
+        </div>
+
+        <h2 id="eisagogi">Εισαγωγή</h2>
+        <p>Καλωσορίσατε σε ένα ακόμα παιχνίδι των Victor Charlie!... (όλο το κείμενο σου μπαίνει εδώ)</p>
+
+        <h2 id="kanones-asfaleias">Κανόνες Ασφαλείας</h2>
+        <h3 id="xoroi-symperifora">Χώροι και συμπεριφορά</h3>
+        <p>...</p>
+
+        <h3 id="prostateytikos-exoplismos">Προστατευτικός Εξοπλισμός</h3>
+        <h4 id="gyalia">Γυαλιά</h4>
+        <p>...</p>
+
+        <h2 id="kanones-paixnidiou">Κανόνες Παιχνιδιού</h2>
+        <h3 id="geniki-symperifora">Γενική Συμπεριφορά</h3>
+        <p>...</p>
+
+        <h3 id="fair-play">Fair Play</h3>
+        <p>...</p>
+
+        <h3 id="spawn-respawn">Spawn/Respawn Areas</h3>
+        <p>...</p>
+
+        <h3 id="hit">Hit</h3>
+        <p>...</p>
+
+        <h3 id="exostrakismos">Εξοστρακισμός</h3>
+        <p>...</p>
+
+        <h3 id="tyfli-voli">Τυφλή Βολή</h3>
+        <p>...</p>
+
+        <h3 id="voli-trypes">Βολή από Τρύπες</h3>
+        <p>...</p>
+
+        <h3 id="voli-aerovolo">Βολή στο Αεροβόλο</h3>
+        <p>...</p>
+
+        <h3 id="voli-ypsometriki">Βολή με Υψομετρική Διαφορά</h3>
+        <p>...</p>
+
+        <h3 id="nekros">Νεκρός</h3>
+        <p>...</p>
+
+        <h3 id="silent-kill">Silent Kill</h3>
+        <p>...</p>
+
+        <h3 id="bam">Μπάμ</h3>
+        <p>...</p>
+
+        <h3 id="parlay">Παρλέ (Parlay)</h3>
+        <p>...</p>
+
+        <h3 id="xeirovomvides">Χειροβομβίδες/Οπλοβομβίδες</h3>
+        <p>...</p>
+
+        <h2 id="poines">Ποινές για Παραβάσεις</h2>
+        <p>...</p>
+
+        <h2 id="sapheia">Κανονισμοί Σαφήνειας</h2>
+        <p>...</p>
+      </div>
+    </div>
+
+    <!-- Footer loaded via JS -->
+    <div id="footer"></div>
+  </div>
+
+  <script>
+    // Load the left column content
+    fetch('left.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('left-column').innerHTML = data;
+      });
+
+    // Load footer content
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+  </script>
+</body>
+</html>
