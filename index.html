@@ -6,7 +6,7 @@
   <title>Victor Charlie</title>
   <style>
     body {
-      background-color: #50634f; /* Join Us background color */
+      background-color: #647a63;
       margin: 0;
       padding: 0;
       display: flex;
@@ -21,39 +21,53 @@
     img {
       max-width: 100%;
       height: auto;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
-    .social-links {
-      display: flex;
-      gap: 20px;
+    /* Shooting muppets quote under logo */
+    .quote {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1.2rem;
+      color: #f5d742; /* highlight yellow */
+      text-align: center;
       margin-bottom: 40px;
-    }
-
-    .social-links a {
-      font-size: 2rem;
-      color: #647a63; /* Join Us icon color */
-      text-decoration: none;
-      transition: transform 0.2s ease, color 0.2s ease;
-    }
-
-    .social-links a:hover {
-      transform: scale(1.2);
-      color: #f5d742; /* highlight yellow on hover */
+      text-shadow: 1px 1px 2px #40503b; /* subtle shadow */
     }
 
     footer {
-      position: fixed;
-      bottom: 0;
+      background-color: #50634f; /* same as Join Us left column */
       width: 100%;
-      text-align: center;
-      padding: 10px;
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+    }
+
+    .footer-social-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-social-links a {
+      font-size: 2rem;
+      color: #647a63; /* lighter green for visibility */
+      transition: color 0.2s ease, transform 0.2s ease;
+      text-decoration: none;
+    }
+
+    .footer-social-links a:hover {
+      color: #f5d742; /* highlight yellow on hover */
+      transform: scale(1.2);
+    }
+
+    @media(max-width: 768px){
+      .footer-social-links {
+        justify-content: center;
+      }
     }
   </style>
 
   <!-- Roboto font -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
   <!-- Font Awesome for social icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -69,15 +83,15 @@
 <body>
   <img src="images/vc-joker-logo.png" alt="VC Joker Logo" />
 
-  <div class="social-links">
-    <a href="https://www.facebook.com/victorcharlie.team" class="facebook" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="https://www.youtube.com/@victorcharlie-team" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
-    <a href="https://www.instagram.com/victorcharlie.team" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.tiktok.com/@victorcharlie.team" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
-  </div>
+  <div class="quote">Shooting muppets since 2004</div>
 
   <footer>
-    <small>Shooting muppets since 2004</small>
+    <div class="footer-social-links">
+      <a href="https://www.facebook.com/victorcharlie.team" class="facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.youtube.com/@victorcharlie-team" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/victorcharlie.team" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@victorcharlie.team" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
   </footer>
 </body>
 </html>
