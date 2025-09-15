@@ -93,13 +93,14 @@
     /* Buttons container at bottom like form */
     .buttons-container {
       display: flex;
-      justify-content: flex-start;
+      justify-content: flex-end; /* push buttons to the right */
       gap: 15px;
       flex-wrap: wrap;
       margin-top: auto; /* push to bottom */
       padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.2);
-      margin-left: 75%; /* shift buttons ~75% to the right */
+      border-top: 1px solid rgba(255,255,255,0.2); /* full-width line */
+      max-width: 70%; /* buttons occupy up to 70% of right column */
+      align-self: flex-end; /* align container to the right */
     }
 
     .join-link {
@@ -169,8 +170,9 @@
         padding: 10px 0;
       }
       .buttons-container {
-        margin-left: 0;
+        max-width: 100%;
         justify-content: center;
+        align-self: center;
       }
     }
   </style>
